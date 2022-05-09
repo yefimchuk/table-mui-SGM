@@ -13,7 +13,7 @@ export const popupSlice: any = createSlice({
       },
       {
         value: 12,
-        date: moment(new Date("2019-22-17T03:14:00")).format("L"),
+        date: moment(new Date("2019-01-17T03:14:00")).format("L"),
         user: "arthur",
         comment: "i love back-end",
       },

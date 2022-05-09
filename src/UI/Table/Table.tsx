@@ -6,7 +6,6 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import "./table.scss";
 import {
   selectIsOpen,
   selectTableTextData,
@@ -14,8 +13,10 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import Demo from "../PopupWindow/PopupSetup";
 import { HandleIsOpen } from "../../BLL/Table/table.slice";
-var uniqid = require("uniqid");
 //imports
+
+var uniqid = require("uniqid");
+
 
 let ColumnGroupingTable = () => {
   let isOpen = useSelector(selectIsOpen);
@@ -42,12 +43,12 @@ let ColumnGroupingTable = () => {
   ).sort((a: any, b: any) => a - b);
 
   return (
-    <Paper sx={{ width: "100%" }}>
+    <Paper  sx={{ width: "100%",  }}>
       <TableContainer sx={{ maxHeight: 600 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
-              <TableCell rowSpan={2}>regions</TableCell>
+              <TableCell style={{backgroundColor:'#13171c', fontSize: 18,color: '#f0f6fc', borderColor: '#949494'}} rowSpan={2}>regions</TableCell>
               {years.map(
                 (
                   item:
@@ -63,7 +64,7 @@ let ColumnGroupingTable = () => {
                     | null
                     | undefined
                 ) => (
-                  <TableCell
+                  <TableCell style={{backgroundColor:'#13171c', fontSize: 18,color: '#f0f6fc',borderColor: '#949494'}}
                     key={uniqid()}
                     align="center"
                     colSpan={columns.length}
@@ -89,7 +90,7 @@ let ColumnGroupingTable = () => {
                       | React.ReactPortal
                       | null
                       | undefined
-                  ) => <TableCell key={uniqid()}>{item}</TableCell>
+                  ) => <TableCell  style={{backgroundColor:'#13171c', color: '#f0f6fc',}}key={uniqid()}>{item}</TableCell>
                 )
               )}
             </TableRow>
@@ -97,10 +98,10 @@ let ColumnGroupingTable = () => {
           <TableBody>
             {textData.map(([region, { G }]: Array<any>) => (
               <TableRow key={uniqid()}>
-                <TableCell>{region}</TableCell>
+                <TableCell style={{backgroundColor:'#21262d',fontSize: 18, color: 'white'}}>{region}</TableCell>
                 {years.flatMap((n: string | number) =>
                   columns.map((m: string | number) => (
-                    <TableCell key={uniqid()} onClick={openWindow}>
+                    <TableCell style={{backgroundColor:'#21262d', fontSize: 16,color: 'white'}} key={uniqid()} onClick={openWindow}>
                       {G[n]?.[m]?.value ?? 0}
                     </TableCell>
                   ))

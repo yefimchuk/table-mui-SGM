@@ -29,7 +29,7 @@ export default function ColumnGroupingTable() {
     ).sort();
 
     const years: any = Array.from(
-        new Set(textData.flatMap((n: { G: {} }[]) => Object.keys(n[1].G)))
+            new Set(textData.flatMap((n: { G: {} }[]) => Object.keys(n[1].G)))
     ).sort((a: any, b: any) => a - b);
 
     return (

@@ -8,7 +8,9 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import moment from "moment";
 import {useFormik} from "formik";
-import {useDispatch, useSelector} from "react-redux";
+import {Button, Checkbox, Form, Input} from 'antd';
+// @ts-ignore
+import {useDispatch, useSelector} from 'react-redux';
 import {addRows} from "../../BLL/Popup/popup.slice";
 import {selectPopup} from "../../BLL/Popup/popup.selector";
 
@@ -21,10 +23,10 @@ export default function PopupTable() {
         initialValues: {
             value: "",
             date: data,
-            user: "Phil",
+            user: "d",
             comment: "",
         },
-        onSubmit: (values) => {
+        onSubmit: (values: any) => {
 
             dispatch(addRows({values}))
 
@@ -79,12 +81,15 @@ export default function PopupTable() {
                                 ></input>
                             </TableCell>
                             <TableCell align="right">
-                                <input
+                                <Form.Item
+                                    label="user"
                                     id="user"
                                     name="user"
-                                    onChange={formik.handleChange}
-                                    value={formik.values.user}
-                                ></input>
+                                    rules={[{required: true, message: 'Please input your username!'}]}
+                                >
+                                    <Input onChange={formik.handleChange}
+                                           value={formik.values.user}/>
+                                </Form.Item>
                             </TableCell>
                             <TableCell align="right">
                                 <input

@@ -4,9 +4,7 @@ import Table from "./UI/Table/Table";
 function App() {
   return (
     <>
-      <div>
-        <Table />
-      </div>
+      <Table />
     </>
   );
 }

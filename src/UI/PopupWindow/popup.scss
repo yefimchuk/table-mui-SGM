@@ -1,35 +1,22 @@
-/*
-.css-1ygcj2i-MuiTableCell-root {
-  background-color: #13171c !important;
-  color: #d1d1d1 !important;
-  font-weight: 600 !important;
-}
 
-.css-1azl6jz-MuiTableCell-root {
-  background-color: #13171c !important;
-  color: #d1d1d1 !important;
-  font-weight: 600 !important;
-}
+.input {
 
-.css-177gid-MuiTableCell-root {
-  background-color: #21262d !important;
-  color: #d1d1d1 !important;
-  font-weight: 600 !important;
-}
-*/
-
-input {
+  text-align: right;
   height: 40px;
-  width: 180px;
+  width: 200px;
+  padding-left: 10px;
+  display: flex!important;
+  justify-content: space-around!important;
   border: 0px;
   font-size: 15px;
   border-radius: 5px;
   outline: none;
-  color: #21262d;
-  background-color: #e5e5e5;
+  color: white !important;
+  border-bottom-color: white !important;
+  background-color: #363e4b
 }
 
-.popup-container {
+.popup__container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -66,12 +53,15 @@ input {
     }
   }
 }
+
 .error {
-  border: 3px solid #c21d1d;
+  border-bottom: 2px solid #c21d1d !important;
 }
+
 .errorMessage {
   color: #c21d1d;
 }
+
 .flex {
   display: flex !important;
   height: 100px;

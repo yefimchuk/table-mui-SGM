@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import moment from "moment";
+import {PopupTableSliceInitType} from "../../../types/sliceTypes";
 
 export const popupSlice: any = createSlice({
   name: "popupSlice",
@@ -30,7 +31,7 @@ export const popupSlice: any = createSlice({
         comment: "i love fullstack",
       },
     ],
-  } as any,
+  } as PopupTableSliceInitType,
   reducers: {
     addRows(state, action) {
       state.rows.push(action.payload.values);

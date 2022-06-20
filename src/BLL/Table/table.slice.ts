@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import {TableSliceInitType} from "../../../types/sliceTypes";
 
 export const tableSlice: any = createSlice({
   name: "tableSlice",
@@ -116,13 +117,13 @@ export const tableSlice: any = createSlice({
       },
     },
     isOpen: false,
-  } as any,
+  } as TableSliceInitType,
   reducers: {
-    HandleIsOpen(state, action) {
+    handleIsOpen(state, action) {
       state.isOpen = action.payload;
     },
   },
   extraReducers: {},
 });
 
-export let { HandleIsOpen }: any = tableSlice.actions;
+export let { handleIsOpen }: any = tableSlice.actions;

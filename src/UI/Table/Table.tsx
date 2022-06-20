@@ -7,14 +7,24 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import {useState} from "react";
+import './table.css'
+import {selectIsOpen, selectTableTextData} from "../../BLL/Table/table.selector";
+import {useDispatch, useSelector} from "react-redux";
+import Demo from "../PopupWindow/PopupSetup";
 import RenderInWindow from "../PopupWindow/PopupSetup";
 import PopupTable from "../PopupWindow/PopupTable";
-import {selectTableTextData} from "../../BLL/Table/table.selector";
-import {useSelector} from "react-redux";
+import {HandleIsOpen} from "../../BLL/Table/table.slice";
 //imports
 
-export default function ColumnGroupingTable() {
-    const [open, setOpen] = useState(false);
+let ColumnGroupingTable = () => {
+    let isOpen = useSelector(selectIsOpen)
+    const dispatch = useDispatch()
+    const openWindow = () => {
+        dispatch(HandleIsOpen(true))
+    };
+
+
+
     const textData: any = Object.entries(useSelector(selectTableTextData));
 
     const columns: any = Array.from(
@@ -29,10 +39,11 @@ export default function ColumnGroupingTable() {
     ).sort();
 
     const years: any = Array.from(
-            new Set(textData.flatMap((n: { G: {} }[]) => Object.keys(n[1].G)))
+        new Set(textData.flatMap((n: { G: {} }[]) => Object.keys(n[1].G)))
     ).sort((a: any, b: any) => a - b);
 
     return (
+
         <Paper sx={{width: "100%"}}>
             <TableContainer sx={{maxHeight: 600}}>
                 <Table stickyHeader aria-label="sticky table">
@@ -58,7 +69,7 @@ export default function ColumnGroupingTable() {
                                 <TableCell>{region}</TableCell>
                                 {years.flatMap((n: string | number) =>
                                     columns.map((m: string | number) => (
-                                        <TableCell onClick={() => setOpen(true)}>
+                                        <TableCell onClick={openWindow}>
                                             {G[n]?.[m]?.value ?? 0}
                                         </TableCell>
                                     ))
@@ -68,11 +79,14 @@ export default function ColumnGroupingTable() {
                     </TableBody>
                 </Table>
             </TableContainer>
-            {open && (
-                <RenderInWindow>
-                    <PopupTable/>
-                </RenderInWindow>
-            )}
+            {isOpen && (
+                <Demo/>
+
+            )
+            }
+
+
         </Paper>
     );
 }
+export default ColumnGroupingTable

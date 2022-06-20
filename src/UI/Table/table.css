@@ -1,0 +1,24 @@
+.css-1ex1afd-MuiTableCell-root {
+    background-color: #21262d !important;
+    color: #d1d1d1 !important;
+    font-weight: 600 !important;
+
+    border-color: #949494 !important;
+}
+
+.css-y8ay40-MuiTableCell-root {
+    background-color: #13171c !important;
+    font-weight: 700 !important;
+    color: #f0f6fc !important;
+
+
+    border-color: #949494 !important;
+}
+.css-dwuj3p-MuiTableCell-root{
+    background-color:  #13171c!important;
+    font-weight: 700 !important;
+    color: #f0f6fc !important;
+    border-bottom: 1px solid #949494 !important;
+    border-right: 1px solid #949494 !important;;
+    border-color: #949494 !important;
+}

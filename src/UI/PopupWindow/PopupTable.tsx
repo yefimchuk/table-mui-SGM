@@ -15,7 +15,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {addRows} from "../../BLL/Popup/popup.slice";
 import {selectPopup} from "../../BLL/Popup/popup.selector";
 import {HandleIsOpen} from "../../BLL/Table/table.slice";
-
+//pull request
 var uniqid = require("uniqid");
 let errors: any = {};
 

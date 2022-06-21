@@ -239,7 +239,7 @@ let PopupTable = () => {
                   onChange={formik.handleChange}
                   value={formik.values.value}
                 ></Input>
-                <Typography  className="errorMessage" variant="h1" component="h2">
+                <Typography  className="errorMessage" variant="h5" component="h4">
                   {errors.value}
                 </Typography>;
 
@@ -255,6 +255,9 @@ let PopupTable = () => {
                   onChange={formik.handleChange}
                   value={formik.values.date}
                 ></Input>
+                <Typography  className="errorMessage"variant="h5" component="h4">
+
+                </Typography>;
               </TableCell>
               <TableCell
                 style={{ backgroundColor: "#21262d", borderColor: "#949494" }}
@@ -267,7 +270,7 @@ let PopupTable = () => {
                   onChange={formik.handleChange}
                   value={formik.values.user}
                 ></Input>
-                <Typography  className="errorMessage" variant="h1" component="h2">
+                <Typography  className="errorMessage"variant="h5" component="h4">
                   {errors.user}
                 </Typography>;
               </TableCell>
@@ -282,7 +285,7 @@ let PopupTable = () => {
                   onChange={formik.handleChange}
                   value={formik.values.comment}
                 ></Input>
-                <Typography  className="errorMessage" variant="h1" component="h2">
+                <Typography  className="errorMessage" variant="h5" component="h4">
                   {errors.comment}
                 </Typography>;
               </TableCell>
